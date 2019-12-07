@@ -7,27 +7,27 @@ if (isset($_POST["submit"])) {
 		$name = $_POST['name'];
 		$email = $_POST['email'];
 		$message = $_POST['message'];
-		$from = 'Demo Contact Form'; 
-		$to = 'temporalsoftwarellc@gmail.com'; 
+		$from = 'Demo Contact Form';
+		$to = 'temporalsoftwarellc@gmail.com';
 		$subject = 'Inquiry Message ';
-		
+
 		$body = "From: $name\n E-Mail: $email\n Message:\n $message";
- 
+
 		// Check if name has been entered
 		if (!$_POST['name']) {
 			$errName = 'Please enter your name';
 		}
-		
+
 		// Check if email has been entered and is valid
 		if (!$_POST['email'] || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 			$errEmail = 'Please enter a valid email address';
 		}
-		
+
 		//Check if message has been entered
 		if (!$_POST['message']) {
 			$errMessage = 'Please enter your message';
 		}
- 
+
 	// If there are no errors, send the email
 	if (!$errName && !$errEmail && !$errMessage) {
 		if (mail ($to, $subject, $body, $from)) {
@@ -60,12 +60,12 @@ if (isset($_POST["submit"])) {
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container">
       <a class="navbar-brand" href="#">Temporal Software</a>
-      
+
 <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> -->
 
       <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
-        
-        
+
+
       </div>
     </div>
   </nav>
@@ -76,7 +76,7 @@ if (isset($_POST["submit"])) {
         <div class="col-md-6 my-2 text-lg-left text-center align-self-center">
           <h1 class="display-3">Temporal Software<br></h1>
           <p class="lead">App and Web Development</p>
-          
+
         </div>
         <div class="col-md-6">
           <img class="img-fluid d-block mx-auto" src="assets/brain_purp2.jpg" width="400"> </div>
@@ -108,6 +108,26 @@ if (isset($_POST["submit"])) {
           <!--<a class="btn btn-outline-primary" href="#features">Learn more</a> -->
         </div>
       </div>
+        <div class="row py-3">
+        <div class="col-md-5 order-2 order-md-1">
+          <img class="img-fluid d-block my-3 mx-auto animate-in-left" src="assets/crimsonWavesBanner.jpg"> </div>
+        <div class="col-md-7 align-self-center order-1 order-md-2 my-3 text-md-left text-center">
+          <h2>New Release: Crimson Waves</h2>
+          <p class="my-2"><b>OUT NOW!</b>&nbsp;</p>
+          <p class="my-2 text-muted"><b>Crimson Waves</b> is an old school arcade experience brought to your phone!&nbsp;</p>
+          <p class="my-2 text-muted">Also Coming Soon to iOS!&nbsp;</p>
+          <a style="background-color: 5c2b4f;border-color: 5c2b4f;margin-bottom: 10px;" href="https://play.google.com/store/apps/details?id=ralSoftware.CrimsonWavesmsonWaves" class="btn btn-primary">Click Here</a>
+        </div>
+      </div>
+      <div class="row pt-3 pb-3">
+        <div class="align-self-center col-lg-7 text-md-left text-center">
+          <h2>Battle Of Memory 2</h2>
+          <p class="my-4 text-muted">The sequel to <b>The Battle Of Memory</b> out now on Google Play!</p>
+               <a style="background-color: 5c2b4f;border-color: 5c2b4f;margin-bottom: 10px;" href="https://play.google.com/store/apps/details?id=com.temporalsoftware.battleofmemory2" class="btn btn-primary">Click Here</a>
+        </div>
+        <div class="align-self-center col-lg-5">
+          <img style="max-height: 250px;border-radius: 35px;" class="img-fluid d-block my-3 mx-auto animate-in-right" src="assets/battleOfMemory2.png"> </div>
+      </div>
         <div class="row pt-3 pb-3">
         <div class="align-self-center col-lg-7 text-md-left text-center">
           <h2>Battle Of Memory</h2>
@@ -117,6 +137,14 @@ if (isset($_POST["submit"])) {
         <div class="align-self-center col-lg-5">
           <img class="img-fluid d-block my-3 mx-auto animate-in-right" src="assets/battleOfMemory.png"> </div>
       </div>
+			<div class="row pt-3 pb-3">
+				<div class="align-self-center col-lg-7 text-md-left text-center">
+					<h2>Laravel</h2>
+					<p class="my-4 text-muted">We are currently expanding into Laravel development.</p>
+				</div>
+				<div class="align-self-center col-lg-5">
+					<img class="img-fluid d-block my-3 mx-auto animate-in-right" style="max-height: 230px;" src="assets/laravel.png"> </div>
+			</div>
       <div class="row py-3">
         <div class="col-md-3 order-2 order-md-1">
           <img class="img-fluid d-block my-3 mx-auto animate-in-left" src="assets/android.png" width="200"> </div>
@@ -153,7 +181,7 @@ if (isset($_POST["submit"])) {
 	<div class="form-group">
 		<label for="name" class="col-sm-2 control-label">Name</label>
 		<div class="col-sm-10">
-			<input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name" 
+			<input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name"
 			value="<?php if(isset($_POST['name'])){ echo htmlspecialchars($_POST['name']); }?>">
 			<?php echo "<p class='text-danger'>$errName</p>";?>
 		</div>
@@ -161,7 +189,7 @@ if (isset($_POST["submit"])) {
 	<div class="form-group">
 		<label for="email" class="col-sm-2 control-label">Email</label>
 		<div class="col-sm-10">
-			<input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" 
+			<input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com"
 			value="<?php if(isset($_POST['email'])){echo htmlspecialchars($_POST['email']);} ?>">
 			<?php echo "<p class='text-danger'>$errEmail</p>";?>
 		</div>
@@ -180,10 +208,10 @@ if (isset($_POST["submit"])) {
 	</div>
 	<div class="form-group">
 		<div class="col-sm-10 col-sm-offset-2">
-			<?php echo $result; ?>	
+			<?php echo $result; ?>
 		</div>
 	</div>
-</form> 
+</form>
         </div>
         <div class="col-4 col-md-1 align-self-center my-3">
           <a href="https://www.facebook.com/temporalsoftware" target="blank"><i class="fa fa-fw fa-facebook fa-3x text-white"></i></a>
@@ -197,7 +225,7 @@ if (isset($_POST["submit"])) {
       </div>
       <div class="row">
         <div class="col-md-12 my-3 text-center">
-          <p class="text-muted">2018 Temporal Software</p>
+          <p class="text-muted">2019 Temporal Software</p>
         </div>
       </div>
     </div>
