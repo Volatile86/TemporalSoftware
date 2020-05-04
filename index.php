@@ -1,43 +1,3 @@
-<?php
-$errName="";
-$errEmail="";
-$errMessage="";
-$result="";
-if (isset($_POST["submit"])) {
-		$name = $_POST['name'];
-		$email = $_POST['email'];
-		$message = $_POST['message'];
-		$from = 'Demo Contact Form';
-		$to = 'temporalsoftwarellc@gmail.com';
-		$subject = 'Inquiry Message ';
-
-		$body = "From: $name\n E-Mail: $email\n Message:\n $message";
-
-		// Check if name has been entered
-		if (!$_POST['name']) {
-			$errName = 'Please enter your name';
-		}
-
-		// Check if email has been entered and is valid
-		if (!$_POST['email'] || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-			$errEmail = 'Please enter a valid email address';
-		}
-
-		//Check if message has been entered
-		if (!$_POST['message']) {
-			$errMessage = 'Please enter your message';
-		}
-
-	// If there are no errors, send the email
-	if (!$errName && !$errEmail && !$errMessage) {
-		if (mail ($to, $subject, $body, $from)) {
-			$result='<div class="alert alert-success">Thank You! We will be in touch</div>';
-		} else {
-			$result='<div class="alert alert-danger">Sorry there was an error sending your message. Please try again later</div>';
-		}
-	}
-}
-?>
 
 
 <html><head>
@@ -177,41 +137,34 @@ if (isset($_POST["submit"])) {
       <div class="row">
         <div class="col-md-9">
           <p class="lead">Contact Us</p>
-<form class="form-horizontal" role="form" method="post" action="index.php">
-	<div class="form-group">
-		<label for="name" class="col-sm-2 control-label">Name</label>
-		<div class="col-sm-10">
-			<input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name"
-			value="<?php if(isset($_POST['name'])){ echo htmlspecialchars($_POST['name']); }?>">
-			<?php echo "<p class='text-danger'>$errName</p>";?>
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="email" class="col-sm-2 control-label">Email</label>
-		<div class="col-sm-10">
-			<input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com"
-			value="<?php if(isset($_POST['email'])){echo htmlspecialchars($_POST['email']);} ?>">
-			<?php echo "<p class='text-danger'>$errEmail</p>";?>
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="message" class="col-sm-2 control-label">Message</label>
-		<div class="col-sm-10">
-			<textarea class="form-control" rows="4" name="message"><?php if(isset($_POST['message'])){echo htmlspecialchars($_POST['message']);}?></textarea>
-			<?php echo "<p class='text-danger'>$errMessage</p>";?>
-		</div>
-	</div>
-	<div class="form-group">
-		<div class="col-sm-10 col-sm-offset-2">
-			<input style="background-color: 5c2b4f;border-color: 5c2b4f;margin-bottom: 10px;" id="submit" name="submit" type="submit" 					value="Send" class="btn btn-primary">
-		</div>
-	</div>
-	<div class="form-group">
-		<div class="col-sm-10 col-sm-offset-2">
-			<?php echo $result; ?>
-		</div>
-	</div>
-</form>
+					<form method="post" id="reused_form"  class="php-email-form">
+						<div class="form-row mb-2">
+							<div class="col-md-6 form-group">
+								<input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+								<div class="validate"></div>
+							</div>
+							<div class="col-md-6 form-group">
+								<input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+								<div class="validate"></div>
+							</div>
+						</div>
+						<div class="form-group">
+							<textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+							<div class="validate"></div>
+						</div>
+						<div class="row" style="margin-bottom:30px;">
+							<div class="col-sm-5">
+									<img src="captcha.php" id="captcha_image"/>
+									<br/>
+									<a id="captcha_reload" href="#">reload</a>
+							</div>
+							<div class="col-sm-6">
+									<label for="email">Enter the code from the image here:</label>
+									<input type="text" class="form-control" required id="captcha" name="captcha" >
+							</div>
+						</div>
+						<div class="text-center"><button type="submit">Send Message</button></div>
+					</form>
         </div>
         <div class="col-4 col-md-1 align-self-center my-3">
           <a href="https://www.facebook.com/temporalsoftware" target="blank"><i class="fa fa-fw fa-facebook fa-3x text-white"></i></a>
@@ -225,7 +178,7 @@ if (isset($_POST["submit"])) {
       </div>
       <div class="row">
         <div class="col-md-12 my-3 text-center">
-          <p class="text-muted">2019 Temporal Software</p>
+          <p class="text-muted">2020 Temporal Software</p>
         </div>
       </div>
     </div>
@@ -236,4 +189,5 @@ if (isset($_POST["submit"])) {
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <!-- Script: Smooth scrolling between anchors in the same page -->
   <script src="javascript/smooth-scroll.js"></script>
+	<script src="form.js"></script>
 </body></html>
