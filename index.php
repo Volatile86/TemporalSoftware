@@ -34,7 +34,7 @@
     <div class="container pb-4">
       <div class="row">
         <div class="col-md-6 my-2 text-lg-left text-center align-self-center">
-          <h1 class="display-3"><img src="assets/tempSoftwareText1.png"><br></h1>
+          <h1 class="display-3"><img class="img-fluid" src="assets/tempSoftwareText1.png"><br></h1>
           <p class="lead text-center">App and Web Development</p>
 
         </div>
