@@ -1,7 +1,7 @@
 
 
-<html><head>
-  <meta charset="utf-8">
+<html><head><meta charset="gb18030">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- PAGE settings -->
   <link rel="icon" href="assets/topIcon.ico">
@@ -39,7 +39,7 @@
 
         </div>
         <div class="col-md-6">
-          <img class="img-fluid d-block mx-auto" src="assets/brain_purp2.jpg" width="400"> </div>
+          <img class="img-fluid d-block mx-auto" src="assets/brain_purp2.png"> </div>
       </div>
     </div>
   </div>
@@ -59,7 +59,7 @@
                 <h3>Debut EP From Pixel Planet</h3>
             </div>
         <div class="col-md-12">
-            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1207940851&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/grant-fractal" title="Pixel Planet" target="_blank" style="color: #cccccc; text-decoration: none;">Pixel Planet</a> 路 <a href="https://soundcloud.com/grant-fractal/sets/the-alpha-ep" title="The Alpha EP" target="_blank" style="color: #cccccc; text-decoration: none;">The Alpha EP</a></div>
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1207940851&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/grant-fractal" title="Pixel Planet" target="_blank" style="color: #cccccc; text-decoration: none;">Pixel Planet</a> · <a href="https://soundcloud.com/grant-fractal/sets/the-alpha-ep" title="The Alpha EP" target="_blank" style="color: #cccccc; text-decoration: none;">The Alpha EP</a></div>
         </div>
       </div>
       <div class="row py-3">
